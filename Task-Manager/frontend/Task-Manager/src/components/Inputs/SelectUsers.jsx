@@ -4,6 +4,7 @@ import axiosInstance from "../../utils/axiosInstance";
 import { LuUsers } from "react-icons/lu";
 import Modal from "../Modal";
 import AvatarGroup from "../AvatarGroup";
+import { getFullImageUrl } from "../../utils/helper";
 
 const SelectUsers = ({ selectedUsers, setSelectedUsers }) => {
   const [allUsers, setAllUsers] = useState([]);
@@ -70,13 +71,13 @@ const SelectUsers = ({ selectedUsers, setSelectedUsers }) => {
         title="Select Users"
       >
         <div className="space-y-4 h-[60vh] overflow-y-auto">
-            {allUsers.map((user) => (
+          {allUsers.map((user) => (
             <div
               key={user._id}
               className="flex items-center gap-4 p-3 border-b border-gray-200"
             >
               <img
-                src={user.profileImageUrl}
+                src={getFullImageUrl(user.profileImageUrl)}
                 alt={user.name}
                 className="w-10 h-10 rounded-full"
               />
@@ -97,7 +98,7 @@ const SelectUsers = ({ selectedUsers, setSelectedUsers }) => {
           ))}
         </div>
 
-         <div className="flex justify-end gap-4 pt-4">
+        <div className="flex justify-end gap-4 pt-4">
           <button className="card-btn" onClick={() => setIsModalOpen(false)}>
             CANCEL
           </button>

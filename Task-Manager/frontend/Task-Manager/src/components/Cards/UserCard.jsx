@@ -1,4 +1,5 @@
 import React from "react";
+import { getFullImageUrl } from "../../utils/helper";
 
 const UserCard = ({ userInfo }) => {
   return (
@@ -6,7 +7,7 @@ const UserCard = ({ userInfo }) => {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
           <img
-            src={userInfo?.profileImageUrl}
+            src={getFullImageUrl(userInfo?.profileImageUrl)}
             alt={`Avatar`}
             className="w-12 h-12 rounded-full border-2 border-white"
           />
@@ -42,8 +43,7 @@ const UserCard = ({ userInfo }) => {
 export default UserCard;
 
 const StatCard = ({ label, count, status }) => {
-
-    const getStatusTagColor = () => {
+  const getStatusTagColor = () => {
     switch (status) {
       case "In Progress":
         return "text-cyan-500 bg-gray-50";

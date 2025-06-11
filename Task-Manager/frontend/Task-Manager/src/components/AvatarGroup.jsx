@@ -1,4 +1,5 @@
 import React from 'react'
+import { getFullImageUrl } from "../utils/helper";
 
 const AvatarGroup = ({avatars, maxVisible = 3}) => {
   return (
@@ -6,7 +7,7 @@ const AvatarGroup = ({avatars, maxVisible = 3}) => {
       {avatars.slice(0, maxVisible).map((avatar, index) => (
         <img
           key={index}
-          src={avatar}
+          src={getFullImageUrl(avatar)}
           alt={`Avatar ${index}`}
           className="w-9 h-9 rounded-full border-2 border-white -ml-3 first:ml-0"
         />

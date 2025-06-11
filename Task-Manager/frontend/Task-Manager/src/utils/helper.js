@@ -13,3 +13,9 @@ export const addThousandsSeparator = (num) => {
     ? `${formattedInteger}.${fractionalPart}`
     : formattedInteger;
 };
+
+export const getFullImageUrl = (url) => {
+  if (!url) return "";
+  if (url.startsWith("http")) return url;
+  return `https://task-manager-g01e.onrender.com${url.startsWith("/") ? "" : "/"}${url}`;
+};
