@@ -37,7 +37,7 @@ const SelectUsers = ({ selectedUsers, setSelectedUsers }) => {
 
   const selectedUserAvatars = allUsers
     .filter((user) => selectedUsers.includes(user._id))
-    .map((user) => user.profileImageUrl);
+    .map((user) => getFullImageUrl(user.profileImageUrl));
 
   useEffect(() => {
     getAllUsers();
