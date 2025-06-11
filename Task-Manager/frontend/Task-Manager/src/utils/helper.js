@@ -16,6 +16,8 @@ export const addThousandsSeparator = (num) => {
 
 export const getFullImageUrl = (url) => {
   if (!url) return "";
+  // If already absolute, return as is
   if (url.startsWith("http")) return url;
-  return `https://task-manager-g01e.onrender.com${url.startsWith("/") ? "" : "/"}${url}`;
+  // Always use the deployed backend URL for production
+  return `https://task-manager-g01e.onrender.com${url.startsWith("/") ? url : "/" + url}`;
 };
