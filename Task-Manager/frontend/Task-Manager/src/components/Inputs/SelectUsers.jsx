@@ -89,6 +89,8 @@ const SelectUsers = ({ selectedUsers, setSelectedUsers }) => {
               </div>
 
               <input
+                id={`select-user-checkbox-${user._id}`}
+                name={`select-user-checkbox-${user._id}`}
                 type="checkbox"
                 checked={tempSelectedUsers.includes(user._id)}
                 onChange={() => toggleUserSelection(user._id)}

@@ -47,6 +47,8 @@ const AddAttachmentsInput = ({attachments, setAttachments}) => {
           <LuPaperclip className="text-gray-400" />
 
           <input
+            id="attachment-link-input"
+            name="attachment-link-input"
             type="text"
             placeholder="Add File Link"
             value={option}
