@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
+const fs = require('fs');
 const connectDB = require("./config/db");
 
 const authRoutes = require("./routes/authRoutes")
@@ -40,6 +41,12 @@ connectDB();
 
 // Middleware
 app.use(express.json());
+
+// Ensure uploads directory exists
+const uploadsDir = path.join(__dirname, 'uploads');
+if (!fs.existsSync(uploadsDir)) {
+  fs.mkdirSync(uploadsDir);
+}
 
 // Routes
 app.use("/api/auth", authRoutes);
