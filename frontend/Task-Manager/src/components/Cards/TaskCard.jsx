@@ -91,15 +91,15 @@ const TaskCard = ({
       <div className="px-4">
         <div className="flex items-center justify-between my-1">
           <div>
-            <label className="text-xs text-gray-500">Start Date</label>
-            <p className="text-[13px] font-medium text-gray-900">
+            <label className="text-xs text-gray-500" htmlFor="start-date">Start Date</label>
+            <p id="start-date" className="text-[13px] font-medium text-gray-900">
               {moment(createdAt).format("Do MMM YYYY")}
             </p>
           </div>
 
           <div>
-            <label className="text-xs text-gray-500">Due Date</label>
-            <p className="text-[13px] font-medium text-gray-900">
+            <label className="text-xs text-gray-500" htmlFor="due-date">Due Date</label>
+            <p id="due-date" className="text-[13px] font-medium text-gray-900">
               {moment(dueDate).format("Do MMM YYYY")}
             </p>
           </div>
