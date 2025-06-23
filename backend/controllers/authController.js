@@ -130,6 +130,7 @@ const updateUserProfile = async (req, res) => {
       name: updatedUser.name,
       email: updatedUser.email,
       role: updatedUser.role,
+      profileImageUrl: updatedUser.profileImageUrl, // Ensure profileImageUrl is returned after update
       token: generateToken(updatedUser._id),
     });
   } catch (error) {
