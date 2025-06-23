@@ -16,8 +16,9 @@ router.post("/upload-image", upload.single("image"), (req, res) => {
     return res.status(400).json({ message: "No file uploaded" });
   }
   // Use local backend URL in development, deployed in production
-  const isLocal = req.headers.origin && req.headers.origin.includes('localhost');
-  const base = isLocal ? "http://localhost:8000" : "https://task-manager-g01e.onrender.com";
+  const protocol = req.protocol;
+  const host = req.get('host');
+  const base = `${protocol}://${host}`;
   const imageUrl = `${base}/uploads/${req.file.filename}`;
   res.status(200).json({ imageUrl });
 });
