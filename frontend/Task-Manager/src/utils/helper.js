@@ -20,6 +20,6 @@ export const getFullImageUrl = (url) => {
   if (url.startsWith("http")) return url;
   // Use local backend in development, deployed backend in production
   const isLocal = window.location.hostname === "localhost";
-  const base = isLocal ? "http://localhost:8000" : "https://task-manager-g01e.onrender.com";
+  const base = isLocal ? "http://localhost:8000" : import.meta.env.VITE_API_BASE_URL;
   return `${base}${url.startsWith("/") ? url : "/" + url}`;
 };
