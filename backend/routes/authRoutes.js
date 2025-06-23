@@ -15,11 +15,10 @@ router.post("/upload-image", upload.single("image"), (req, res) => {
   if (!req.file) {
     return res.status(400).json({ message: "No file uploaded" });
   }
-  // Use protocol and host to always return HTTPS image URLs in production
-  let protocol = req.protocol;
-  let host = req.get('host');
-  // Force HTTPS in production
-  if (host && host.includes('onrender.com')) protocol = 'https';
+  // Always use HTTPS in production (Render)
+  const host = req.get('host');
+  const isLocal = host && (host.includes('localhost') || host.startsWith('127.0.0.1'));
+  const protocol = isLocal ? req.protocol : 'https';
   const base = `${protocol}://${host}`;
   const imageUrl = `${base}/uploads/${req.file.filename}`;
   res.status(200).json({ imageUrl });
