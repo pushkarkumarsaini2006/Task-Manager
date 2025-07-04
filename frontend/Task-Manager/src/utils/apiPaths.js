@@ -14,14 +14,6 @@ const getBaseURL = () => {
 
 export const BASE_URL = getBaseURL();
 
-// Debug information (remove in production)
-console.log("🌐 API Configuration:", {
-  hostname: window.location.hostname,
-  baseURL: BASE_URL,
-  env: import.meta.env.VITE_API_BASE_URL,
-  mode: import.meta.env.MODE
-});
-
 // utils/apiPaths.js
 export const API_PATHS = {
   AUTH: {
