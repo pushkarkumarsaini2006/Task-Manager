@@ -30,6 +30,16 @@ axiosInstance.interceptors.response.use(
     return response;
   },
   (error) => {
+    // Enhanced error logging for debugging
+    console.error("🚨 API Error:", {
+      url: error.config?.url,
+      baseURL: error.config?.baseURL,
+      method: error.config?.method,
+      status: error.response?.status,
+      message: error.message,
+      fullError: error
+    });
+
     // Handle common errors globally
     if (error.response) {
       if (error.response.status === 401) {
@@ -40,6 +50,8 @@ axiosInstance.interceptors.response.use(
       }
     } else if (error.code === "ECONNABORTED") {
       console.error("Request timeout. Please try again.");
+    } else if (error.code === "ERR_NETWORK") {
+      console.error("Network error. Check if the backend server is running.");
     }
     return Promise.reject(error);
   }

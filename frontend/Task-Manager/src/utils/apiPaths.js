@@ -1,4 +1,26 @@
-export const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+// Automatically detect environment and set base URL
+const getBaseURL = () => {
+  // Check if we're running locally
+  const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+  
+  // Use environment variable if available, otherwise fallback to deployed URL
+  if (import.meta.env.VITE_API_BASE_URL) {
+    return import.meta.env.VITE_API_BASE_URL;
+  }
+  
+  // Fallback logic
+  return isLocal ? "http://localhost:8000" : "https://task-manager-3mwm.onrender.com";
+};
+
+export const BASE_URL = getBaseURL();
+
+// Debug information (remove in production)
+console.log("🌐 API Configuration:", {
+  hostname: window.location.hostname,
+  baseURL: BASE_URL,
+  env: import.meta.env.VITE_API_BASE_URL,
+  mode: import.meta.env.MODE
+});
 
 // utils/apiPaths.js
 export const API_PATHS = {
