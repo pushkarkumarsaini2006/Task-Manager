@@ -32,7 +32,7 @@ const Input = ({ value, onChange, label, placeholder, type, id, name }) => {
           autoComplete={
             type === "password"
               ? "current-password"
-              : type === "email" || name?.toLowerCase().includes("email")
+              : type === "email" || name?.toLowerCase().includes("email") || placeholder?.includes("@")
               ? "email"
               : name?.toLowerCase().includes("user")
               ? "username"
