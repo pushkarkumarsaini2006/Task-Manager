@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const User = require('../models/User');
 
 const OLD_URL = 'http://localhost:8000';
-const NEW_URL = 'https://task-manager-g01e.onrender.com';
+const NEW_URL = 'https://task-manager-3mwm.onrender.com';
 
 async function updateProfileImageUrls() {
   await mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });

@@ -2,7 +2,7 @@
 
 A full-stack task management platform built with **Node.js**, **Express**, **MongoDB**, and **React (Vite)**. Designed for teams and individuals to efficiently manage, track, and collaborate on tasks with a modern, responsive UI.
 
-🚀 **Live Demo**: [https://task-manager-1-u4qh.onrender.com](https://task-manager-1-u4qh.onrender.com)
+🚀 **Live Demo**: 
 
 ---
 
@@ -90,7 +90,7 @@ npm start
 cd frontend/Task-Manager
 npm install
 # Create a .env file and add:
-# VITE_API_BASE_URL=https://your-backend-url
+# VITE_API_BASE_URL=
 npm run dev
 ```
 
@@ -134,7 +134,7 @@ JWT_SECRET=your_jwt_secret
 
 ### Frontend `.env`
 ```bash
-VITE_API_BASE_URL=https://your-backend-url
+VITE_API_BASE_URL=
 ```
 
 ---
