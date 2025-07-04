@@ -12,16 +12,16 @@ const Input = ({ value, onChange, label, placeholder, type, id, name }) => {
       {label ? (
         <label
           className="text-[13px] text-slate-800"
-          htmlFor={id || name}
-          id={id || name ? `${id || name}-label` : undefined}
+          htmlFor={id || name || label?.replace(/\s+/g, "").toLowerCase()}
+          id={(id || name || label?.replace(/\s+/g, "").toLowerCase()) + "-label"}
         >
           {label}
         </label>
       ) : null}
       <div className="input-box">
         <input
-          id={id || name}
-          aria-labelledby={label ? `${id || name}-label` : undefined}
+          id={id || name || label?.replace(/\s+/g, "").toLowerCase()}
+          aria-labelledby={label ? (id || name || label?.replace(/\s+/g, "").toLowerCase()) + "-label" : undefined}
           name={
             name ||
             id ||
