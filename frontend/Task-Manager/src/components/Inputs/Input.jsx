@@ -28,6 +28,15 @@ const Input = ({ value, onChange, label, placeholder, type, id, name }) => {
           className="w-full bg-transparent outline-none"
           value={value ?? ""}
           onChange={(e) => onChange(e)}
+          autoComplete={
+            type === "password"
+              ? "current-password"
+              : type === "email"
+              ? "email"
+              : type === "username" || name === "username"
+              ? "username"
+              : undefined
+          }
         />
 
         {type === "password" && (
