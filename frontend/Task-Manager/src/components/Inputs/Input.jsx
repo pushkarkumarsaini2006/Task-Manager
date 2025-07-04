@@ -9,10 +9,11 @@ const Input = ({ value, onChange, label, placeholder, type, id, name }) => {
   };
   return (
     <div>
-      <label className="text-[13px] text-slate-800" htmlFor={id || name}>
-        {label}
-      </label>
-
+      {label && (
+        <label className="text-[13px] text-slate-800" htmlFor={id || name}>
+          {label}
+        </label>
+      )}
       <div className="input-box">
         <input
           id={id || name}
@@ -37,6 +38,7 @@ const Input = ({ value, onChange, label, placeholder, type, id, name }) => {
               ? "username"
               : undefined
           }
+          aria-label={label}
         />
 
         {type === "password" && (
