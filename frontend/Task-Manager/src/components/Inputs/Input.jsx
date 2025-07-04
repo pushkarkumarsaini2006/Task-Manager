@@ -9,14 +9,19 @@ const Input = ({ value, onChange, label, placeholder, type, id, name }) => {
   };
   return (
     <div>
-      {label && (
-        <label className="text-[13px] text-slate-800" htmlFor={id || name}>
+      {label ? (
+        <label
+          className="text-[13px] text-slate-800"
+          htmlFor={id || name}
+          id={id || name ? `${id || name}-label` : undefined}
+        >
           {label}
         </label>
-      )}
+      ) : null}
       <div className="input-box">
         <input
           id={id || name}
+          aria-labelledby={label ? `${id || name}-label` : undefined}
           name={
             name ||
             id ||
