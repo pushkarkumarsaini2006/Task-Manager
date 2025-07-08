@@ -1,0 +1,12 @@
+# Ignore environment variable files
+backend/.env
+frontend/Task-Manager/.env
+frontend/Task-Manager/.env.development
+frontend/Task-Manager/.env.production
+# Ignore uploads if needed
+backend/uploads/
+# Node modules
+backend/node_modules/
+frontend/Task-Manager/node_modules/
+# Log files
+*.log
