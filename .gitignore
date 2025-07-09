@@ -1,12 +1,39 @@
 # Ignore environment variable files
 backend/.env
+backend/.env.local
+backend/.env.development
+backend/.env.production
 frontend/Task-Manager/.env
+frontend/Task-Manager/.env.local
 frontend/Task-Manager/.env.development
 frontend/Task-Manager/.env.production
+
 # Ignore uploads if needed
 backend/uploads/
+
 # Node modules
 backend/node_modules/
 frontend/Task-Manager/node_modules/
+
 # Log files
 *.log
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build directories
+backend/dist/
+frontend/Task-Manager/dist/
+frontend/Task-Manager/build/
